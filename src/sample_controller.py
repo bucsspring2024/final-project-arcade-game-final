@@ -1,33 +1,52 @@
+import pygame
+import random
+import time
+import shelve
 
 class Controller:
-  
-  def __init__(self):
-    #setup pygame data
-    
-  def mainloop(self):
-    #select state loop
-    
-  
-  ### below are some sample loop states ###
+    def __init__(self):
+        # Setup pygame data
+        pygame.init()
+        self.screen = pygame.display.set_mode((800, 600))
+        self.clock = pygame.time.Clock()
 
-  def menuloop(self):
-    
-      #event loop
+    def mainloop(self):
+        # Select state loop
+        while True:
+            self.menuloop()
 
-      #update data
+    def menuloop(self):
+        # Event loop
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
 
-      #redraw
-      
-  def gameloop(self):
-      #event loop
+        # Update data
 
-      #update data
+        # Redraw
 
-      #redraw
-    
-  def gameoverloop(self):
-      #event loop
+    def gameloop(self):
+        # Event loop
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
 
-      #update data
+        # Update data
 
-      #redraw
+        # Redraw
+
+    def gameoverloop(self):
+        # Event loop
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+        # Update data
+
+        # Redraw
+
+# Uncomment below line to test the controller
+# Controller().mainloop()
